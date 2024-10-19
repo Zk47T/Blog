@@ -1,6 +1,7 @@
-<!--Code Block with Copy Button Inside-->
+<!-- Code Block with Copy Button at the Bottom -->
 <div class="code-container">
-  <pre>    <code id="code-block">
+  <pre>
+    <code class="code-block">
 function helloWorld() {
     console.log("Hello, World!");
     console.log("Hello, World!");
@@ -8,44 +9,70 @@ function helloWorld() {
     console.log("Hello, World!");
     console.log("Hello, World!");  
 }
+
     </code>
-    <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
-  </pre><pre><br /></pre><pre><br /></pre>
+  </pre>
+  <button class="copy-btn">Copy</button>
+</div>
+<h2 style="text-align: left;"><b><span style="color: #351c75;">Tại sao cần dùng Makefile</span></b></h2>
+<span style="font-family: inherit; font-size: medium;">
+  <span>&nbsp;&nbsp; &nbsp;</span>Khi khối lượng code chưa nhiều, đa số các bạn sẽ code hoàn toàn trong 1 file main,&nbsp; tuy nhiên để như vậy sẽ rất khó cho người đọc, ta cần tách ra các file của từng thư viện, module cụ thể. Với 1 project nhỏ thì ta vẫn có thể gõ hoàn toàn thủ công các lệnh GCC để biên dịch.&nbsp;<br />
+  <span>&nbsp;&nbsp; &nbsp;</span>Khi số lượng file ngày càng nhiều lên, ta sẽ cần tự động hóa quá trình biên dịch cũng như phải tìm cách giảm thời gian biên dịch xuống, đó là lúc ta cần dùng Makefile.
+</span>
+<div class="code-container">
+  <pre>
+    <code class="code-block">
+function goodbyeWorld() {
+    console.log("Goodbye, World!");
+}
+function goodbyeWorld() {
+    console.log("Goodbye, World!");
+}
+function goodbyeWorld() {
+    console.log("Goodbye, World!");
+
+    </code>
+  </pre>
+  <button class="copy-btn">Copy</button>
 </div>
 
+<!-- Additional code blocks can be added here -->
+
 <script>
-  function copyToClipboard() {
-    // Get the code block content
-    var codeBlock = document.getElementById("code-block").textContent;
+  document.addEventListener('click', function(event) {
+    if (event.target.matches('.copy-btn')) {
+      // Get the code block content related to the clicked button
+      const codeBlock = event.target.previousElementSibling.querySelector('code').textContent;
 
-    // Create a temporary textarea to hold the text
-    var tempTextArea = document.createElement("textarea");
-    tempTextArea.value = codeBlock;
-    document.body.appendChild(tempTextArea);
+      // Create a temporary textarea to hold the text
+      const tempTextArea = document.createElement('textarea');
+      tempTextArea.value = codeBlock;
+      document.body.appendChild(tempTextArea);
 
-    // Select and copy the text
-    tempTextArea.select();
-    document.execCommand("copy");
+      // Select and copy the text
+      tempTextArea.select();
+      document.execCommand('copy');
 
-    // Remove the temporary textarea
-    document.body.removeChild(tempTextArea);
+      // Remove the temporary textarea
+      document.body.removeChild(tempTextArea);
 
-    // Change button text to "Copied!"
-    var copyButton = document.querySelector(".copy-btn");
-    copyButton.textContent = "Copied!";
-    copyButton.classList.add("copied");
+      // Change button text to "Copied!"
+      event.target.textContent = 'Copied!';
+      event.target.classList.add('copied');
 
-    // Change the button back after 2 seconds
-    setTimeout(function() {
-      copyButton.textContent = "Copy";
-      copyButton.classList.remove("copied");
-    }, 2000);
-  }
+      // Change the button back after 2 seconds
+      setTimeout(function() {
+        event.target.textContent = 'Copy';
+        event.target.classList.remove('copied');
+      }, 2000);
+    }
+  });
 </script>
 
 <style>
   .code-container {
     position: relative; /* For positioning the button */
+    margin-bottom: 20px; /* Space between code blocks */
   }
 
   pre {
@@ -59,21 +86,19 @@ function helloWorld() {
     overflow-x: auto;          /* Enable horizontal scrolling */
     max-height: 300px;         /* Set a maximum height with vertical scrolling */
     font-family: "Courier New", Courier, monospace; /* Use a monospace font */
-    position: relative; /* For positioning the button */
   }
 
   /* Copy button styling */
   .copy-btn {
-    position: absolute;
-    top: 10px;   /* Position from the top */
-    right: 10px; /* Position from the right */
+    display: block; /* Make button a block element */
     padding: 5px 10px;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    z-index: 1; /* Ensure button is above other elements */
+    margin-top: 10px; /* Space above the button */
+    text-align: center; /* Center text in button */
   }
 
   .copy-btn:hover {
