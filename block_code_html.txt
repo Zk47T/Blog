@@ -115,12 +115,9 @@ function goodbyeWorld() {
 
 
 //
-<div class="code-container"><div style="text-align: left;"><span style="font-size: medium;">File Main.c :</span></div><pre>    <code class="code-block">
-#include "library.h"
-int main()
-{
-    foo();
-    return 0;
-}</code> </pre>
+<div class="code-container"><div style="text-align: left;"><span style="font-size: medium;">File library.h :</span></div><pre>    <code class="code-block">
+#pragma once
+#include &lt;stdio.h&gt
+void foo();</code> </pre>
   <button class="copy-btn">Copy</button>
 </div>
