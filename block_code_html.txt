@@ -109,3 +109,18 @@ function goodbyeWorld() {
     background-color: #2196F3;
   }
 </style>
+
+
+
+
+
+//
+<div class="code-container"><div style="text-align: left;"><span style="font-size: medium;">File Main.c :</span></div><pre>    <code class="code-block">
+#include "library.h"
+int main()
+{
+    foo();
+    return 0;
+}</code> </pre>
+  <button class="copy-btn">Copy</button>
+</div>
