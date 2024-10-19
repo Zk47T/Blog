@@ -1,63 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code Block with Copy Button</title>
-  <style>
-    .code-container {
-      position: relative; /* For positioning the button */
-    }
-
-    pre {
-      display: block;
-      padding: 10px;
-      background-color: #f5f5f5; /* Light gray background */
-      border: 1px solid #ddd;    /* Border around the code block */
-      border-radius: 5px;        /* Rounded corners */
-      white-space: pre;          /* Preserve spaces and line breaks */
-      overflow-y: auto;          /* Enable vertical scrolling */
-      overflow-x: auto;          /* Enable horizontal scrolling */
-      max-height: 300px;         /* Set a maximum height with vertical scrolling */
-      font-family: "Courier New", Courier, monospace; /* Use a monospace font */
-      position: relative; /* For positioning the button */
-    }
-
-    /* Copy button styling */
-    .copy-btn {
-      position: absolute;
-      top: 10px;   /* Position from the top */
-      right: 10px; /* Position from the right */
-      padding: 5px 10px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      z-index: 1; /* Ensure button is above other elements */
-    }
-
-    .copy-btn:hover {
-      background-color: #45a049;
-    }
-
-    .copied {
-      background-color: #2196F3;
-    }
-  </style>
-</head>
-<body>
-
+<!--Code Block with Copy Button Inside-->
 <div class="code-container">
-  <pre>
-    <code id="code-block">
-function helloWorld() {
-    console.log("Hello, World!");
-    console.log("Hello, World!");
-    console.log("Hello, World!");
-    console.log("Hello, World!");
-    console.log("Hello, World!");  
-}
+  <pre>    <code id="code-block">
 function helloWorld() {
     console.log("Hello, World!");
     console.log("Hello, World!");
@@ -67,7 +10,7 @@ function helloWorld() {
 }
     </code>
     <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
-  </pre>
+  </pre><pre><br /></pre><pre><br /></pre>
 </div>
 
 <script>
@@ -100,6 +43,44 @@ function helloWorld() {
   }
 </script>
 
-</body>
-</html>
+<style>
+  .code-container {
+    position: relative; /* For positioning the button */
+  }
 
+  pre {
+    display: block;
+    padding: 10px;
+    background-color: #f5f5f5; /* Light gray background */
+    border: 1px solid #ddd;    /* Border around the code block */
+    border-radius: 5px;        /* Rounded corners */
+    white-space: pre;          /* Preserve spaces and line breaks */
+    overflow-y: auto;          /* Enable vertical scrolling */
+    overflow-x: auto;          /* Enable horizontal scrolling */
+    max-height: 300px;         /* Set a maximum height with vertical scrolling */
+    font-family: "Courier New", Courier, monospace; /* Use a monospace font */
+    position: relative; /* For positioning the button */
+  }
+
+  /* Copy button styling */
+  .copy-btn {
+    position: absolute;
+    top: 10px;   /* Position from the top */
+    right: 10px; /* Position from the right */
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1; /* Ensure button is above other elements */
+  }
+
+  .copy-btn:hover {
+    background-color: #45a049;
+  }
+
+  .copied {
+    background-color: #2196F3;
+  }
+</style>
