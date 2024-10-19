@@ -1,0 +1,11 @@
+#Preprocessing
+gcc -E main.c -o main.i
+
+#Compiling
+gcc -S main.i -o main.s
+
+#Assembling
+as main.s -o main.o
+
+#Linking
+gcc -v -o main main.o
